@@ -1,0 +1,11 @@
+pipeline:
+  name: "data_preprocessing"
+
+input:
+  pfs:
+    glob: "/*"
+    repo: "dirty_data"
+
+transform:
+  cmd: ["python", "data_preprocessing.py"]
+  image: "eduard1/pach_ray_integration:1.2"
