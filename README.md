@@ -8,12 +8,12 @@ We will use Pachyderm for data processing and Ray for the training model.
 After integrating both tools we can work with data using only one command and it could be distributed across the dataset 
 and also parallelize the training process with PyTorch training setup.
 
-After installation and integration, you will be able to train distributed PyTorch model on the Kubernetes cluster and 
+After installation and integration, you will be able to train the distributed PyTorch model on the Kubernetes cluster and 
 doing data preprocessing into two clicks using the Pachyderm pipeline.
 
 [Ray](https://github.com/ray-project/ray) is an open-source unified framework for scaling AI and Python applications. 
-Using Ray can help you to create distributed  application. You can create scalable task like data processing, model training , 
-hyperparameter tunnig, model serving and reinforcement learning.  
+Using Ray can help you to create a distributed  application. You can create scalable tasks like data processing, model training, 
+hyperparameter tuning, model serving, and reinforcement learning.  
 
 [Pachyderm](https://github.com/pachyderm/pachyderm) provides automotive data pipelines
 with easy understandable data transformation and versioning for all types of data. 
@@ -22,9 +22,9 @@ with easy understandable data transformation and versioning for all types of dat
 1. set up mikrok8s
 2. set up pachyderm 
 3. install ray cluster on microk8s
-4. create repo in the pachyderm and add files
-5. create docker container and push into docker hub
-6. create a configuration file for Pachyderm pipeline and run pipeline
+4. Create repo in the pachyderm and add files
+5. Create docker container and push it into docker hub
+6. Create a configuration file for the Pachyderm pipeline and run a pipeline
 7. Prepare code for Ray Train using PyTorch
 8. Integrate Pachyderm and Ray Train. Train model.
 9. Conclusion
@@ -211,8 +211,8 @@ Create and push the image into the docker hub.
 ```bash
 $ docker build -t pach_ray_integration .
 $ docker login
-$ docker tag pach_ray_integration eduard1/pach_ray_integration:1.0
-$ docker push eduard1/pach_ray_integration:1.0
+$ docker tag pach_ray_integration eduard1/pach_ray_integration:1.2
+$ docker push eduard1/pach_ray_integration:1.2
 ```
 
 ## 6. Create a configuration file for Pachyderm pipeline and run the pipeline
