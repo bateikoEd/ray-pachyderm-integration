@@ -138,7 +138,7 @@ editing the currently active context "local"
 $ pachctl config get context local
 {
   "pachd_address": "grpc://10.152.183.249:30653",
-  "cluster_deployment_id": "HIFH7llPz3VR8ezcvyJ3JkVhLdt552ri",
+  "cluster_deployment_id": "************",
   "project": "pach_ray"
 }
 ```
@@ -210,8 +210,10 @@ COPY data_preprocessing.py.py .
 Create and push the image into the docker hub.
 ```bash
 $ docker build -t pach_ray_integration .
-$ docker login
 $ docker tag pach_ray_integration eduard1/pach_ray_integration:1.2
+# login into docker hub
+$ docker login
+# push iamge into docker hub
 $ docker push eduard1/pach_ray_integration:1.2
 ```
 
@@ -235,9 +237,11 @@ Let's create a pipeline using the command line
 ```bash
 $ pachctl create pipeline -f pipeline_configuration.yaml
 
-# run that command we should see created repo and created new file
-# it means that pipeline run successfully
+# Run that command we should see the created repo and new file
+# It means that the pipeline ran successfully
 $ pachctl list file data_preprocessing@master
+NAME              TYPE SIZE     
+/output_data.json file 1.399KiB
 ```
 
 ## 7. Prepare code for Ray Train using PyTorch
